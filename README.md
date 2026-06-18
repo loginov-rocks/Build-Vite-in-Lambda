@@ -1,4 +1,6 @@
-# Build React Static in Lambda
+# Build Vite in Lambda
+
+Work in progress, forked from https://github.com/loginov-rocks/Build-React-Static-in-Lambda
 
 Static Site Generation in Lambda with React Static: [Medium](https://loginov-rocks.medium.com/static-site-generation-in-lambda-with-react-static-bdba551e4fe4)
 
@@ -77,6 +79,14 @@ docker exec -it <CONTAINER ID> bash
 ```sh
 npm install
 node lambda/without-docker
+```
+
+### Deploy
+
+Build and deploy to ECR:
+
+```sh
+docker build --platform linux/amd64 --provenance=false --sbom=false -t ACCOUNT.dkr.ecr.REGION.amazonaws.com/REPO:latest --push .
 ```
 
 ## Reference
